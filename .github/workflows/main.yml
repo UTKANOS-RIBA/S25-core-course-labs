@@ -22,7 +22,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r app_python/requirements.txt
 
       - name: Run Linter (Flake8)
         run: |
@@ -32,7 +32,7 @@ jobs:
       - name: Run Unit Tests
         run: |
           pip install pytest pytest-mock
-          pytest tests/
+          pytest app_python/tests/
 
   docker:
     needs: build
